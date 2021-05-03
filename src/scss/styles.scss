@@ -1,0 +1,194 @@
+@import "./02-base/reset";
+
+$desktop: 640px;
+
+$cyan: hsl(179, 62%, 43%);
+$yellow: hsl(71, 73%, 54%);
+
+$gray: hsl(204, 43%, 93%);
+$blue-gray: hsl(218, 22%, 67%);
+
+* {
+  // outline: 1px solid hotpink;
+}
+body {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  color: $blue-gray;
+  background-color: $gray;
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 72px 0;
+  @media (min-width: $desktop) {
+    display: grid;
+    place-items: center;
+  }
+}
+.wrapper {
+  width: 311px;
+  margin-left: auto;
+  margin-right: auto;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px 0 rgba(0, 81, 171, 0.15);
+  @media (min-width: $desktop) {
+    width: 635px;
+    display: grid;
+    // place-items: center;
+    grid-template-areas:
+      "a a"
+      "b c";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .white,
+  .teal,
+  .teal-light {
+    padding: 24px;
+    @media (min-width: $desktop) {
+      padding: 40px;
+    }
+
+    h1,
+    h2 {
+      font-weight: 700;
+      letter-spacing: -0.22px;
+      font-size: 18px;
+    }
+  }
+
+  .white {
+    padding-top: 28px;
+    padding-bottom: 32px;
+    @media (min-width: $desktop) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    grid-area: a;
+
+    h1 {
+      color: $cyan;
+      @media (min-width: $desktop) {
+        font-size: 24px;
+        letter-spacing: -0.3px;
+        margin-bottom: 23px;
+        line-height: 29px;
+      }
+    }
+
+    h2 {
+      font-size: 15px;
+      color: $yellow;
+      letter-spacing: -0.19px;
+      line-height: 20px;
+      margin-top: 24px;
+      margin-bottom: 16px;
+
+      @media (min-width: $desktop) {
+        font-size: 18px;
+        letter-spacing: -0.22px;
+        line-height: 22px;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #9aa7be;
+      letter-spacing: -0.17px;
+      line-height: 26px;
+
+      @media (min-width: $desktop) {
+        font-size: 16px;
+        letter-spacing: -0.2px;
+      }
+    }
+  }
+
+  .teal {
+    background: $cyan;
+    color: white;
+    grid-area: b;
+
+    h1 {
+      margin-bottom: 17px;
+      line-height: 22px;
+    }
+
+    .price {
+      display: flex;
+      color: hsla(0, 0%, 100%, 0.5);
+      font-size: 16px;
+      letter-spacing: -0.2px;
+      line-height: 37px;
+      align-items: center;
+      margin-bottom: 4px;
+
+      .amount {
+        font-size: 32px;
+        color: #ffffff;
+        letter-spacing: -0.4px;
+        margin-right: 12px;
+        line-height: 26px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      letter-spacing: -0.2px;
+      line-height: 26px;
+      margin-bottom: 26px;
+      font-weight: 400;
+    }
+
+    button {
+      background: #c0df33;
+      box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      width: 263px;
+      height: 48px;
+      line-height: 48px;
+      padding: 0;
+      border: none;
+      font-size: 16px;
+      color: #ffffff;
+      letter-spacing: -0.2px;
+      @media (min-width: $desktop) {
+        width: 237px;
+      }
+    }
+  }
+
+  .teal-light {
+    background: linear-gradient(
+        hsla(0, 0%, 100%, 0.15),
+        hsla(0, 0%, 100%, 0.15)
+      ),
+      linear-gradient($cyan, $cyan);
+    color: white;
+    grid-area: c;
+
+    h1 {
+      font-size: 18px;
+      color: #ffffff;
+      letter-spacing: -0.22px;
+      line-height: 22px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      opacity: 0.75;
+      font-size: 14px;
+      letter-spacing: -0.17px;
+      margin: 0;
+      margin-top: 17px;
+
+      li {
+        line-height: 20px;
+      }
+    }
+  }
+}
